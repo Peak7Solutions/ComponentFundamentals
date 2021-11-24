@@ -106,6 +106,17 @@ export default {
   margin: auto;
 }
 
+.resources_link {
+  color: $links;
+  &:visited {
+      color: $linksVisited;
+    }
+
+  &:hover,
+  &:focus {
+    color: $linksHoverFocus;
+  }
+}
 .resources_title {
   color: $subHeader;
   padding: 1em 0;

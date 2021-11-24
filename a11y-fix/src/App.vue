@@ -18,6 +18,7 @@ import Resources from '@/components/Resources.vue'
 import LearnMore from '@/components/LearnMore.vue'
 import Footer from "@/components/Footer.vue"
 
+
 export default {
   name: "App",
   components: {
