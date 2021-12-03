@@ -4,6 +4,15 @@
       <h1 class="title">{{post.title}}</h1>
       <p>{{post.content}}</p>
     </article>
+    <aside>
+      <h3>Posts you might enjoy</h3>
+      <ul>
+        <li v-for="related in relatedPosts" :key="related.id">
+          <nuxt-link :to="{ name: 'posts-id', params: { id: related.id }}"> 
+            {{ related.title }} </nuxt-link>
+        </li>
+      </ul>
+    </aside>
   </div>
 </template>
 
@@ -44,7 +53,10 @@
     },
     computed: {
       post () {
-        return this.posts.find(post => post.id === this.id)
+        return this.$store.state.posts.all.find(post => post.id === this.id)
+      },
+      relatedPosts () {
+        return this.$store.state.posts.all.filter(post => post.id !== this.id)
       }
     }
   }
